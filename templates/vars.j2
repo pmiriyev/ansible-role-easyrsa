@@ -110,7 +110,9 @@ set_var EASYRSA_ALGO {{ easyrsa_conf_algo }}
 
 # Define the named curve, used in ec mode only:
 
+{% if easyrsa_conf_algo == 'ec' -%}
 set_var EASYRSA_CURVE {{ easyrsa_conf_curve }}
+{% endif %}
 
 # In how many days should the root CA key expire?
 
